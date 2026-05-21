@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Control de Movimientos Bancarios</title>
+      <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+
+      <header>
+          <h1>Gestión de Registros Bancarios</h1>
+      </header>
+
+      <main>
+
+          <!-- FORMULARIO -->
+          <section class="formulario">
+              <h2>Agregar Movimiento</h2>
+
+              <form id="formMovimiento">
+
+                  <label>Cantidad</label>
+                  <input type="number" id="cantidad" required>
+
+                  <label>Tipo</label>
+                  <select id="tipo" required>
+                      <option value="">Selecciona</option>
+                      <option value="Ingreso">Ingreso</option>
+                      <option value="Egreso">Egreso</option>
+                  </select>
+
+                  <label>Banca Utilizada</label>
+                  <select id="banca" required>
+                      <option value="">Selecciona</option>
+                      <option value="Azteca">Azteca</option>
+                      <option value="Banamex">Banamex</option>
+                      <option value="Santander">Santander</option>
+                      <option value="BBVA">BBVA</option>
+                      <option value="Inbursa">Inbursa</option>
+                  </select>
+
+                  <label>Fecha y Hora</label>
+                  <input type="datetime-local" id="fecha" required>
+
+                  <label>Descripción</label>
+                  <textarea id="descripcion"></textarea>
+
+                  <button type="submit">Guardar Movimiento</button>
+
+              </form>
+          </section>
+
+          <!-- TABLA -->
+          <section class="tabla">
+              <h2>Historial de Movimientos</h2>
+
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Cantidad</th>
+                          <th>Tipo</th>
+                          <th>Banca</th>
+                          <th>Fecha</th>
+                          <th>Descripción</th>
+                      </tr>
+                  </thead>
+
+                  <tbody id="tablaMovimientos">
+                  </tbody>
+              </table>
+          </section>
+
+          <!-- SALDOS -->
+          <section class="saldos">
+
+              <h2>Consultar Saldos</h2>
+
+              <input type="password" id="password" placeholder="Ingrese contraseña">
+              <button onclick="verificarPassword()">Ver Saldos</button>
+
+              <div id="contenedorSaldos" class="oculto">
+
+                  <h3>Saldos Actuales</h3>
+
+                  <ul>
+                      <li>Azteca: $<span id="saldoAzteca">0</span></li>
+                      <li>Banamex: $<span id="saldoBanamex">0</span></li>
+                      <li>Santander: $<span id="saldoSantander">0</span></li>
+                      <li>BBVA: $<span id="saldoBBVA">0</span></li>
+                      <li>Inbursa: $<span id="saldoInbursa">0</span></li>
+                  </ul>
+
+              </div>
+
+          </section>
+
+      </main>
+
+      <script src="./js/script.js"></script>
+
+  </body>
+</html>
